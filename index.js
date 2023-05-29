@@ -11,8 +11,8 @@ const q1Answer3 = document.querySelector('q1-answer3');
 const q1Answer4 = document.querySelector('q1-answer4');
 
 question1.innerText = questions[0].query;
-q1Answer1.innerText = questions[0].variants.variant1;
-q1Answer2.innerText = questions[0].variants.variant2;
-q1Answer3.innerText = questions[0].variants.variant3;
-q1Answer4.innerText = questions[0].variants.variant4;
+q1Answer1.innerText = questions[1].variants.variant1;
+q1Answer2.innerText = questions[2].variants.variant2;
+q1Answer3.innerText = questions[3].variants.variant3;
+q1Answer4.innerText = questions[4].variants.variant4;
 
