@@ -1,22 +1,46 @@
-const questions = [
-  {query: "Cand a aparut JS?", 
+const data = [
+  {question: "Când a aparut JS?", 
     variants: {
       variant1: "2000", 
       variant2: "1995", 
       variant3: "1992", 
       variant4: "1989"}
-  }
+  },
+  {question: "Cate luni are anul?", 
+    variants: {
+      variant1: "9", 
+      variant2: "13", 
+      variant3: "12", 
+      variant4: "10"}
+  },
+  {question: "un ou fierbe in 10 minute, dar 5 oua in cit timp vor fierbe?", 
+    variants: {
+      variant1: "10 minute", 
+      variant2: "50 minute", 
+      variant3: "15 minute", 
+      variant4: "30 minute"}
+  },
+  {question: "Care este fondatorul Microsoft?", 
+    variants: {
+      variant1: "Lary Page", 
+      variant2: "Elon Musk", 
+      variant3: "Steve Jobs", 
+      variant4: "Bill Gates"}
+  },
+  {question: "Cate ore are ziua?", 
+    variants: {
+      variant1: "24", 
+      variant2: "30", 
+      variant3: "33", 
+      variant4: "8"}
+  },
 ]
 
-const question1 = document.querySelector('.q1');
-const q1Answer1 = document.querySelector('#a_text');
-const q1Answer2 = document.querySelector('#b_text');
-const q1Answer3 = document.querySelector('#c_text');
-const q1Answer4 = document.querySelector('#d_text');
+const question = document.getElementsByClassName("q1");
+question.innerText = data.question;
 
-question1.innerText = questions[0].query;
-q1Answer1.innerText = questions[0].variants.variant1;
-q1Answer2.innerText = questions[0].variants.variant2;
-q1Answer3.innerText = questions[0].variants.variant3;
-q1Answer4.innerText = questions[0].variants.variant4;
+let n_answ = 5;
 
+for (let i = 0; i <= 4; i++) {
+  variants[i].innerText = data.variants[i];
+}
