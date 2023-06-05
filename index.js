@@ -37,10 +37,19 @@ const data = [
 ]
 
 const question = document.getElementsByClassName("q1");
-question.innerText = data.question;
+const variants = document.querySelectorAll('.quiz__box label');
 
-let n_answ = 5;
+function showNextQuestion(numarIntrebarii = 0) {
 
-for (let i = 0; i <= 4; i++) {
-  variants[i].innerText = data.variants[i];
+  for (let i = 0; i <= 4; i+) {
+    question[0].innerText = data[i].question;
+
+    for (let j = 1; j < 5; j++) {
+      variants[j - 1].innerText = data[i].variants['variant' + j];
+    }
+
+    if (numarIntrebarii === i) {
+      break;
+    }
+  }
 }
