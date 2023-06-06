@@ -41,11 +41,11 @@ const variants = document.querySelectorAll('.quiz__box label');
 
 function showNextQuestion(numarIntrebarii = 0) {
 
-  for (let i = 0; i <= 4; i+) {
+  for (let i = 0; i <= 4; i++) {
     question[0].innerText = data[i].question;
 
     for (let j = 1; j < 5; j++) {
-      variants[j - 1].innerText = data[i].variants['variant' + j];
+      variants[j - 1].innerText = data[1].variants['variant' + j];
     }
 
     if (numarIntrebarii === i) {
@@ -53,3 +53,5 @@ function showNextQuestion(numarIntrebarii = 0) {
     }
   }
 }
+
+showNextQuestion()
