@@ -4,39 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <title>JS-App</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="quiz">
     <div class="quiz__box">
-      <p class="q1"></p>
+      <p class="question">Question</p>
       <ul>
         <li>
-          <input type="radio" name="answer" id="a" class="q1-answer1">
-          <label for="a" id="a_text"></label>
+          <input type="radio" name="answer" id="a" class="answer">
+          <label for="a" id="answer-a">Answer</label>
         </li>
 
         <li>
-          <input type="radio" name="answer" id="b" class="q1-answer2">
-          <label for="b" id="b_text"></label>
+          <input type="radio" name="answer" id="b" class="answer">
+          <label for="b" id="answer-b">Answer</label>
         </li>
 
         <li>
-          <input type="radio" name="answer" id="c" class="q1-answer3">
-          <label for="c" id="c_text"></label>
+          <input type="radio" name="answer" id="c" class="answer">
+          <label for="c" id="answer-c">Answer</label>
         </li>
 
         <li>
-          <input type="radio" name="answer" id="d" class="q1-answer4">
-          <label for="d" id="d_text"></label>
+          <input type="radio" name="answer" id="d" class="answer">
+          <label for="d" id="answer-d">Answer</label>
         </li>
       </ul>
+
     </div>
     <button id="submit">Submit</button>
   </div>
 
-<script src="./index.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>
