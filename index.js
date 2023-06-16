@@ -84,7 +84,7 @@ let raspunsuriCorecte = 0
 startQuiz()
 
 function startQuiz() {
-  const nrIntrebariiData = data[nrIntrebarii]
+  const nrIntrebariiData = data[nrIntrebarii].variants;
 
   question.innerText = nrIntrebariiData.question
   varianta_1.innerText = nrIntrebariiData.variant1
@@ -95,19 +95,22 @@ function startQuiz() {
 
 
 function rsSelectat() {
-  let answerEl
-  answerEl.forEach(answer => {
-    if(answer.checked) {
-      answer = variants
+  let answerEl = document.querySelectorAll(".quiz__box .answer");
+  let answer;
+
+  answerEl.forEach(selected => {
+    if(selected.checked) {
+      answer = selected.id
     }
-  })
+  });
+
   return answer
 }
 
 submitBtn.addEventListener('click', () => {
   const answer = rsSelectat()
   if(answer) {
-    if(answer === data[nrIntrebarii].correct) {
+    if(answer === data[nrIntrebarii].variants.correct) {
       raspunsuriCorecte++
     }
 
@@ -115,6 +118,7 @@ submitBtn.addEventListener('click', () => {
 
     if(nrIntrebarii < data.length) {
       startQuiz()
+      showNextQuestion(nrIntrebarii)
     } else {
       quiz.innerHTML = `
       <h2>Ai raspuns corect la ${raspunsuriCorecte}/${data.length} intrebari</h2>
