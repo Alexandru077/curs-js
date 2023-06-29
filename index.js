@@ -1,56 +1,16 @@
-const data = [
-  {
-    question: "Când a aparut JS?",
-    variants: {
-      variant1: "2000",
-      variant2: "1995",
-      variant3: "1992",
-      variant4: "1989",
-      correct: "variant2"
-    }
-  },
+fetch("http://localhost:3000/question.json", {})
+.then(result => result.json())
+.then((data) => {
+  startQuizz(data);
 
-  {
-    question: "Cîte luni are anul?",
-    variants: {
-      variant1: "9",
-      variant2: "13",
-      variant3: "12",
-      variant4: "10",
-      correct: "variant3"
-    }
-  },
-  {
-    question: "un ou fierbe in 10 minute, dar 5 oua in cit timp vor fierbe?",
-    variants: {
-      variant1: "10 minute",
-      variant2: "50 minute",
-      variant3: "15 minute",
-      variant4: "30 minute",
-      correct: "variant1"
-    }
-  },
-  {
-    question: "Care este fondatorul Microsoft?",
-    variants: {
-      variant1: "Lary Page",
-      variant2: "Elon Musk",
-      variant3: "Steve Jobs",
-      variant4: "Bill Gates",
-      correct: "variant4"
-    }
-  },
-  {
-    question: "Cite ore are ziua?",
-    variants: {
-      variant1: "24",
-      variant2: "30",
-      variant3: "33",
-      variant4: "8",
-      correct: "variant1"
-    }
-  },
-]
+  document.querySelector("#quiz").style.display = "block";
+  document.querySelector("#placeholder").style.display = "none";
+
+}).catch((error) => {
+  console.log(error);
+});
+
+function startQuizz(data) {
 
 const quiz = document.querySelector('#quiz')
 const question = document.getElementsByClassName("question")
@@ -122,3 +82,4 @@ submitBtn.addEventListener('click', () => {
 
 showNextQuestion();
 startQuiz()
+}
